@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | SELLPAL INVERCAJAS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .login-role-tabs .btn { border-radius: 10px; font-weight: 600; }
+    .login-role-tabs .btn.active { box-shadow: 0 0 0 2px rgba(13,110,253,.25); }
+    .role-hint { font-size: .82rem; border-radius: 10px; }
+    .register-box {
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-dark navbar-corporate">
+    <div class="container justify-content-between">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/img/logo_invercajas.svg" alt="SELLPAL" height="38">
+      </a>
+      <a href="../index.html" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-arrow-left me-1"></i> Volver a la Tienda
+      </a>
+    </div>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <span class="badge bg-warning text-dark px-3 py-1 fw-bold text-uppercase mb-2">Acceso a la Plataforma</span>
+        <h3 class="fw-bold text-white mb-1">Bienvenido a SELLPAL</h3>
+        <p class="text-light opacity-75 small mb-0">Elige el tipo de acceso e ingresa tus credenciales</p>
+      </div>
+
+      <div class="auth-body">
+
+        <!-- Selector de tipo de usuario -->
+        <div class="login-role-tabs d-grid gap-2 d-sm-flex mb-3" role="group" aria-label="Tipo de acceso">
+          <button type="button" class="btn btn-outline-primary flex-fill active" id="tabCliente" onclick="setLoginRole('cliente')">
+            <i class="bi bi-shop me-1"></i> Cliente / Tienda
+          </button>
+          <button type="button" class="btn btn-outline-dark flex-fill" id="tabAdmin" onclick="setLoginRole('admin')">
+            <i class="bi bi-shield-lock me-1"></i> Administrador
+          </button>
+        </div>
+
+        <div id="hintCliente" class="role-hint alert alert-primary py-2 px-3 mb-3">
+          <i class="bi bi-info-circle me-1"></i>
+          Acceso para <strong>tiendas y clientes mayoristas</strong>. Si aún no tienes cuenta, regístrate abajo. Las cuentas nuevas requieren aprobación.
+        </div>
+        <div id="hintAdmin" class="role-hint alert alert-secondary py-2 px-3 mb-3 d-none">
+          <i class="bi bi-shield-check me-1"></i>
+          Acceso exclusivo del <strong>personal INVERCAJAS / SELLPAL</strong>. Panel de control, CRUDs, reportes y aprobación de usuarios.
+        </div>
+
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+          <div id="loginErrorAlert" class="alert alert-danger d-none py-2 small mb-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i>
+            <span id="loginErrorMessage"></span>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-dark" id="emailLabel">Correo de la tienda / cliente</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-envelope text-muted"></i></span>
+              <input type="email" class="form-control" id="loginEmail" placeholder="compras@tutienda.com" required autocomplete="username">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label class="form-label small fw-bold text-dark mb-0">Contraseña</label>
+              <a href="#" class="small text-decoration-none text-primary" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">
+                ¿Olvidaste tu contraseña?
+              </a>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-lock text-muted"></i></span>
+              <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+              <button class="btn btn-outline-secondary password-toggle-btn" type="button" onclick="PasswordValidator.toggleVisibility('loginPassword', this)" title="Mostrar contraseña">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe" checked>
+            <label class="form-check-label small text-muted" for="rememberMe">Recordar mi sesión en este dispositivo</label>
+          </div>
+
+          <div class="d-grid gap-2 mb-3">
+            <button type="submit" class="btn btn-accent fw-bold py-2" id="btnLoginSubmit">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Ingresar como Cliente
+            </button>
+          </div>
+        </form>
+
+        <!-- Registro: solo orientado a clientes/tiendas -->
+        <div id="registerSection" class="register-box p-3 text-center">
+          <p class="small text-muted mb-2 mb-sm-3">
+            ¿Tu negocio aún no está en SELLPAL?
+          </p>
+          <a href="registro.html" class="btn btn-outline-primary btn-sm fw-bold">
+            <i class="bi bi-person-plus me-1"></i> Crear cuenta de tienda / cliente
+          </a>
+          <p class="small text-muted mt-2 mb-0">
+            Después del registro un administrador debe <strong>aprobar</strong> tu cuenta.
+          </p>
+        </div>
+
+        <div id="adminNote" class="text-center small text-muted d-none mt-3">
+          Los administradores no se auto-registran. Contacta al equipo INVERCAJAS si necesitas acceso al panel.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-dark text-white">
+          <h6 class="modal-title fw-bold">Recuperar Contraseña</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-3">
+          <p class="small text-muted mb-3">
+            Ingresa tu correo registrado y te enviaremos un enlace de recuperación seguro.
+          </p>
+          <input type="email" class="form-control mb-3" placeholder="correo@comercio.com">
+          <button type="button" class="btn btn-accent w-100 btn-sm fw-bold" onclick="alert('Enlace de recuperación enviado al correo.'); bootstrap.Modal.getInstance(document.getElementById('forgotPasswordModal')).hide();">
+            Enviar Enlace
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/password-validator.js"></script>
+  <script>
+    let loginRole = 'cliente';
+
+    function setLoginRole(role) {
+      loginRole = role === 'admin' ? 'admin' : 'cliente';
+      const tabC = document.getElementById('tabCliente');
+      const tabA = document.getElementById('tabAdmin');
+      const hintC = document.getElementById('hintCliente');
+      const hintA = document.getElementById('hintAdmin');
+      const reg = document.getElementById('registerSection');
+      const admNote = document.getElementById('adminNote');
+      const emailLabel = document.getElementById('emailLabel');
+      const emailInput = document.getElementById('loginEmail');
+      const btn = document.getElementById('btnLoginSubmit');
+
+      tabC.classList.toggle('active', loginRole === 'cliente');
+      tabA.classList.toggle('active', loginRole === 'admin');
+      tabC.classList.toggle('btn-primary', loginRole === 'cliente');
+      tabC.classList.toggle('btn-outline-primary', loginRole !== 'cliente');
+      tabA.classList.toggle('btn-dark', loginRole === 'admin');
+      tabA.classList.toggle('btn-outline-dark', loginRole !== 'admin');
+
+      if (loginRole === 'admin') {
+        hintC.classList.add('d-none');
+        hintA.classList.remove('d-none');
+        reg.classList.add('d-none');
+        admNote.classList.remove('d-none');
+        emailLabel.textContent = 'Correo de administrador';
+        emailInput.placeholder = 'admin@sellpal.co';
+        btn.innerHTML = '<i class="bi bi-shield-lock me-1"></i> Ingresar al Panel Admin';
+      } else {
+        hintC.classList.remove('d-none');
+        hintA.classList.add('d-none');
+        reg.classList.remove('d-none');
+        admNote.classList.add('d-none');
+        emailLabel.textContent = 'Correo de la tienda / cliente';
+        emailInput.placeholder = 'compras@tutienda.com';
+        btn.innerHTML = '<i class="bi bi-box-arrow-in-right me-1"></i> Ingresar como Cliente';
+      }
+      hideLoginError();
+    }
+
+    function showLoginError(message) {
+      const alertBox = document.getElementById('loginErrorAlert');
+      const msgEl = document.getElementById('loginErrorMessage');
+      if (alertBox && msgEl) {
+        msgEl.textContent = message;
+        alertBox.classList.remove('d-none');
+      }
+    }
+
+    function hideLoginError() {
+      const alertBox = document.getElementById('loginErrorAlert');
+      if (alertBox) alertBox.classList.add('d-none');
+    }
+
+    async function handleLoginSubmit(e) {
+      e.preventDefault();
+      hideLoginError();
+
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        showLoginError('Debes ingresar correo y contraseña.');
+        return;
+      }
+
+      const res = await Auth.login(email, password);
+
+      if (!res || !res.success) {
+        showLoginError((res && res.message) || 'Credenciales incorrectas.');
+        document.getElementById('loginPassword').value = '';
+        document.getElementById('loginPassword').focus();
+        return;
+      }
+
+      const isAdminUser = res.user && String(res.user.rol).toLowerCase() === 'admin';
+
+      // Validar que el tipo de pestaña coincida con el rol real
+      if (loginRole === 'admin' && !isAdminUser) {
+        Auth.logout && Auth.clearSession();
+        showLoginError('Esta cuenta no es de administrador. Usa la pestaña «Cliente / Tienda».');
+        return;
+      }
+      if (loginRole === 'cliente' && isAdminUser) {
+        // Permitir entrar, pero redirigir al panel admin (más práctico)
+        // O bloquear: descomenta las 3 líneas siguientes si quieres forzar pestaña Admin
+        // Auth.clearSession();
+        // showLoginError('Esta es una cuenta de administrador. Usa la pestaña «Administrador».');
+        // return;
+      }
+
+      if (window.ApiService && typeof ApiService.logActivity === 'function') {
+        ApiService.logActivity(
+          'ACCESO',
+          'Seguridad',
+          'Inicio de sesión: ' + res.user.nombre + ' (' + res.user.email + ')',
+          res.user.nombre,
+          isAdminUser ? 'Administrador' : 'Cliente'
+        );
+      }
+
+      if (isAdminUser) {
+        window.location.href = 'admin/dashboard.html';
+      } else {
+        window.location.href = 'catalogo.html';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setLoginRole('cliente'));
+  </script>
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#fffbeb" rx="16"/>
+  <g transform="translate(40, 50)">
+    <!-- BelVita Yellow Pack -->
+    <rect x="0" y="0" width="120" height="90" rx="8" fill="#d97706"/>
+    <rect x="8" y="8" width="104" height="74" rx="4" fill="#f59e0b"/>
+    <!-- Wheat ears -->
+    <path d="M30,70 Q45,45 60,35 M40,60 Q50,45 65,40 M50,65 Q60,50 70,45" stroke="#78350f" stroke-width="2" fill="none"/>
+    <text x="60" y="48" font-family="'Trebuchet MS', sans-serif" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle">belVita</text>
+    <text x="60" y="65" font-family="sans-serif" font-size="8" font-weight="bold" fill="#451a03" text-anchor="middle">DESAYUNO INTEGRAL</text>
+  </g>
+  <rect x="20" y="15" width="65" height="20" rx="4" fill="#b45309"/>
+  <text x="52" y="29" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">MONDELEZ</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#eff6ff" rx="16"/>
+  <g transform="translate(40, 50)">
+    <!-- Chips Ahoy Cookie -->
+    <circle cx="60" cy="50" r="48" fill="#d97706"/>
+    <circle cx="60" cy="50" r="44" fill="#f59e0b"/>
+    <!-- Chocolate Chips -->
+    <path d="M40,30 Q45,25 50,32 Q46,38 40,30 Z" fill="#451a03"/>
+    <path d="M75,35 Q82,30 85,38 Q78,44 75,35 Z" fill="#451a03"/>
+    <path d="M35,60 Q42,55 45,63 Q38,69 35,60 Z" fill="#451a03"/>
+    <path d="M70,68 Q76,62 82,68 Q77,75 70,68 Z" fill="#451a03"/>
+    <path d="M52,48 Q58,42 63,49 Q58,56 52,48 Z" fill="#451a03"/>
+    <!-- Banner -->
+    <rect x="0" y="38" width="120" height="24" rx="4" fill="#1d4ed8"/>
+    <text x="60" y="55" font-family="'Arial Black', sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-style="italic">CHIPS AHOY!</text>
+  </g>
+  <rect x="20" y="15" width="65" height="20" rx="4" fill="#1d4ed8"/>
+  <text x="52" y="29" font-family="sans-serif" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">MONDELEZ</text>
+</svg>

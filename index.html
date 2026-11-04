@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELLPAL | Plataforma Mayorista INVERCAJAS</title>
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra Superior Informativa -->
+  <div class="top-notice-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <i class="bi bi-shield-check me-1 text-warning"></i>
+        <span>Canal Oficial de Distribución <strong>INVERCAJAS S.A.S.</strong></span>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-telephone-fill me-1 text-warning"></i> PBX: (601) 745-8900</span>
+        <span><i class="bi bi-whatsapp me-1 text-success"></i> +57 310 456 7890</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar Principal -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-corporate sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/img/logo_invercajas_oficial.jpg" alt="SELLPAL INVERCAJAS" class="rounded-2 bg-white p-1 shadow-sm" height="46">
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html"><i class="bi bi-house-door me-1"></i> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/catalogo.html"><i class="bi bi-grid me-1"></i> Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pages/pedidos.html"><i class="bi bi-bag-check me-1"></i> Mis Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto"><i class="bi bi-chat-dots me-1"></i> Contacto</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+          <!-- Carrito de Compras -->
+          <a href="pages/carrito.html" class="cart-icon-btn" title="Ver carrito">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span class="cart-badge" style="display: none;">0</span>
+          </a>
+
+          <!-- Contenedor dinámico de sesión (Auth.js) -->
+          <div id="navbarUserContainer"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <div class="hero-tag">
+            <i class="bi bi-stars"></i> Plataforma Mayorista B2B & Minorista
+          </div>
+          <h1 class="hero-title mb-3">
+            La mejor confitería y galletas para tu negocio con <span>SELLPAL</span>
+          </h1>
+          <p class="hero-subtitle mb-4">
+            Abastece tu supermercado, tienda o distribuidora con el portafolio líder de <strong>INVERCAJAS</strong> y marcas internacionales como <strong>Mondelez</strong>. Precios mayoristas, inventario en tiempo real y entregas garantizadas.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="pages/catalogo.html" class="btn btn-accent btn-lg px-4 py-2">
+              <i class="bi bi-shop me-2"></i> Ver Catálogo Completo
+            </a>
+            <a href="pages/registro.html" class="btn btn-outline-light btn-lg px-4 py-2">
+              <i class="bi bi-person-plus me-2"></i> Registrar Negocio
+            </a>
+          </div>
+          
+          <div class="row mt-5 pt-3 border-top border-secondary gy-2">
+            <div class="col-4">
+              <h4 class="fw-bold text-warning mb-0">+5,000</h4>
+              <small class="text-light opacity-75">Clientes Activos</small>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold text-warning mb-0">24/48 h</h4>
+              <small class="text-light opacity-75">Tiempo de Despacho</small>
+            </div>
+            <div class="col-4">
+              <h4 class="fw-bold text-warning mb-0">100%</h4>
+              <small class="text-light opacity-75">Garantía de Frescura</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <div class="p-4 bg-white rounded-4 shadow-lg text-dark mx-auto" style="max-width: 420px;">
+            <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+              <span class="badge bg-primary px-3 py-2">PORTAFOLIO LÍDER</span>
+              <span class="text-muted small"><i class="bi bi-truck me-1"></i>Envíos Nacionales</span>
+            </div>
+            <img src="assets/img/prod_oreo.jpg" alt="Oreo" class="img-fluid my-2 rounded-3" style="max-height: 180px; object-fit: contain;">
+            <h5 class="fw-bold text-dark mt-2">Galletas Oreo Original x 24</h5>
+            <p class="text-muted small">El producto de confitería #1 en rotación para tu mostrador. Presentación display mayorista.</p>
+            <div class="d-flex justify-content-between align-items-center p-2 bg-light rounded-3 mb-3">
+              <span class="text-muted small">Precio Mayorista:</span>
+              <span class="fs-4 fw-extrabold text-primary">$36.000 COP</span>
+            </div>
+            <a href="pages/catalogo.html" class="btn btn-accent w-100 fw-bold">
+              Pedir Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcas que Distribuimos -->
+  <section class="brands-banner py-4 bg-white">
+    <div class="container">
+      <div class="text-center mb-3">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 fw-bold text-uppercase small">Distribuidores Autorizados</span>
+        <h3 class="fw-bold text-dark mt-2 mb-1">Portafolio Oficial Mondelez International</h3>
+        <p class="text-muted small">Distribuimos las marcas líderes de mayor rotación preferidas por tenderos y mayoristas</p>
+      </div>
+
+      <!-- Banner Oficial de Marcas Mondelez -->
+      <div class="text-center mb-4">
+        <img src="assets/img/banner_mondelez.jpg" alt="Portafolio de marcas Mondelez International distribuidas por INVERCAJAS" class="img-fluid rounded-4 shadow-sm border bg-white p-3" style="max-height: 240px;">
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-2">
+        <div class="brand-pill"><i class="bi bi-award-fill text-warning"></i> MONDELEZ INTERNATIONAL</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> OREO</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> CLUB SOCIAL</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> TRIDENT</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> HALLS</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> CHIPS AHOY!</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> SPARKIES</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> MILKA</div>
+        <div class="brand-pill"><i class="bi bi-check2-circle text-primary"></i> BELVITA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentación de INVERCAJAS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <div class="pe-lg-4">
+            <span class="badge bg-light text-primary border px-3 py-2 fw-bold text-uppercase mb-2">Conócenos</span>
+            <h2 class="fw-extrabold text-dark mb-3">
+              Sobre <span class="text-primary">INVERCAJAS S.A.S.</span>
+            </h2>
+            <p class="text-secondary leading-relaxed">
+              <strong>INVERCAJAS S.A.S.</strong> es una compañía líder en distribución mayorista y logística de consumo masivo en Colombia, especializada en la comercialización eficiente de galletas, confitería, chocolates y pasabocas de alto impacto comercial.
+            </p>
+            <p class="text-secondary leading-relaxed">
+              A través de <strong>SELLPAL</strong>, conectamos directamente a tenderos, mayoristas y cadenas de abastecimiento con los inventarios de las fábricas, eliminando fricciones, agilizando el flujo de pedidos y garantizando los mejores márgenes de rentabilidad del mercado.
+            </p>
+            
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-3 bg-white shadow-sm">
+                  <i class="bi bi-buildings fs-3 text-primary mb-2"></i>
+                  <h6 class="fw-bold mb-1">Centros de Acopio</h6>
+                  <p class="text-muted small mb-0">Bodegas estratégicas climatizadas que conservan la frescura del producto.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 border rounded-3 bg-white shadow-sm">
+                  <i class="bi bi-truck-flatbed fs-3 text-warning mb-2"></i>
+                  <h6 class="fw-bold mb-1">Flota Propia</h6>
+                  <p class="text-muted small mb-0">Rutas de distribución diarias con seguimiento de guías en tiempo real.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 bg-white rounded-4 border shadow-sm">
+            <div class="text-center p-3 mb-3 bg-light rounded-4 border">
+              <img src="assets/img/logo_invercajas_oficial.jpg" alt="INVERCAJAS DISTRIBUCIÓN Y PLATAFORMA DIGITAL SELLPALL" class="img-fluid rounded-3 shadow-sm" style="max-height: 200px;">
+            </div>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="p-3 bg-white rounded-3 shadow-sm text-center">
+                  <i class="bi bi-shield-lock-fill text-success fs-2"></i>
+                  <h6 class="fw-bold mt-2 mb-1">Pagos Seguros</h6>
+                  <small class="text-muted">Bancos, Nequi y Contra Entrega</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-white rounded-3 shadow-sm text-center">
+                  <i class="bi bi-box-seam-fill text-primary fs-2"></i>
+                  <h6 class="fw-bold mt-2 mb-1">Stock Certificado</h6>
+                  <small class="text-muted">Lotes recientes y alta rotación</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-white rounded-3 shadow-sm text-center">
+                  <i class="bi bi-percent text-warning fs-2"></i>
+                  <h6 class="fw-bold mt-2 mb-1">Descuentos</h6>
+                  <small class="text-muted">Precios escalonados por volumen</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 bg-white rounded-3 shadow-sm text-center">
+                  <i class="bi bi-headset text-danger fs-2"></i>
+                  <h6 class="fw-bold mt-2 mb-1">Soporte ADSO</h6>
+                  <small class="text-muted">Atención técnica y comercial</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Destacados -->
+  <section class="py-5" style="background-color: #f8fafc;">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+        <div>
+          <span class="badge bg-warning text-dark px-3 py-2 fw-bold text-uppercase mb-2">Más Vendidos</span>
+          <h2 class="fw-extrabold text-dark mb-0">Productos Destacados en SELLPAL</h2>
+        </div>
+        <a href="pages/catalogo.html" class="btn btn-outline-primary mt-2 mt-sm-0">
+          Explorar todo el catálogo <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <!-- Contenedor dinámico de productos destacados -->
+      <div class="row" id="featuredProductsContainer">
+        <!-- Renderizado por Store.initFeaturedProducts() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios de la Plataforma -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge bg-light text-primary border px-3 py-2 fw-bold text-uppercase mb-2">Ventajas Comerciales</span>
+        <h2 class="fw-extrabold text-dark">¿Por qué elegir SELLPAL para tu distribución?</h2>
+        <p class="text-muted">Diseñado específicamente para optimizar la cadena de valor entre fabricantes, INVERCAJAS y los comercios minoristas.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Precios Mayoristas Directos</h5>
+            <p class="text-muted small mb-0">
+              Accede a tarifas preferenciales sin intermediarios, optimizando el margen de ganancia de tu negocio en cada pedido que realices.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-speedometer"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Gestión Digital Inmediata</h5>
+            <p class="text-muted small mb-0">
+              Realiza tus pedidos en segundos las 24 horas del día. Consulta tu historial de compras y el estado de tus entregas en tiempo real.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="bi bi-patch-check-fill"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Garantía y Rotación</h5>
+            <p class="text-muted small mb-0">
+              Productos con fechas de vencimiento amplias, embalaje industrial en óptimas condiciones y respaldo de la marca líder Mondelez.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto e Información -->
+  <section class="py-5 bg-light" id="contacto">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-5">
+          <span class="badge bg-primary px-3 py-2 fw-bold text-uppercase mb-2">Atención al Cliente</span>
+          <h2 class="fw-extrabold text-dark mb-3">¿Tienes dudas o requieres una cotización especial?</h2>
+          <p class="text-muted mb-4">
+            Nuestro equipo comercial de INVERCAJAS está disponible para asesorarte en compras por volumen, aperturas de crédito o convenios institucionales.
+          </p>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="btn btn-primary rounded-circle p-2" style="width: 45px; height: 45px;">
+              <i class="bi bi-geo-alt-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0">Oficina Principal</h6>
+              <small class="text-muted">Parque Industrial Celta, Km 7 Vía Medellín, Bodega 14</small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="btn btn-warning text-dark rounded-circle p-2" style="width: 45px; height: 45px;">
+              <i class="bi bi-envelope-fill fs-5"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0">Correo Electrónico</h6>
+              <small class="text-muted">distribucion@invercajas.com.co | soporte@sellpal.co</small>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="btn btn-success rounded-circle p-2" style="width: 45px; height: 45px;">
+              <i class="bi bi-whatsapp fs-5"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold mb-0">Línea Mayorista WhatsApp</h6>
+              <small class="text-muted">+57 310 456 7890 (Lunes a Viernes 7:00 AM - 6:00 PM)</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm rounded-4 p-4">
+            <h5 class="fw-bold text-dark mb-3">Envíanos un Mensaje Comercial</h5>
+            <form id="contactForm" onsubmit="event.preventDefault(); alert('¡Gracias por contactarnos! Un asesor de INVERCAJAS se comunicará contigo.'); this.reset();">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Nombre o Razón Social</label>
+                  <input type="text" class="form-control" placeholder="Ej. Distribuidora Central" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Teléfono / WhatsApp</label>
+                  <input type="tel" class="form-control" placeholder="Ej. 310 123 4567" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Correo Electrónico</label>
+                  <input type="email" class="form-control" placeholder="contacto@empresa.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold">Ciudad / Municipio</label>
+                  <input type="text" class="form-control" placeholder="Ej. Bogotá / Cali / Medellín" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-bold">Mensaje o Referencias de Interés</label>
+                  <textarea class="form-control" rows="3" placeholder="Indícanos los productos que necesitas cotizar..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-accent px-4 py-2 fw-bold">
+                    <i class="bi bi-send-fill me-1"></i> Enviar Consulta
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Corporativo -->
+  <footer class="footer-corporate">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="assets/img/logo_invercajas_oficial.jpg" alt="SELLPAL INVERCAJAS" height="48" class="rounded-2 bg-white p-1 mb-3">
+          <p class="small text-light opacity-75">
+            Plataforma integral de gestión y distribución mayorista desarrollada para <strong>INVERCAJAS S.A.S.</strong>, facilitando el abastecimiento rápido y confiable de productos de confitería y consumo masivo.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Plataforma</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="pages/catalogo.html">Catálogo Mayorista</a></li>
+            <li><a href="pages/pedidos.html">Historial de Pedidos</a></li>
+            <li><a href="pages/carrito.html">Mi Carrito</a></li>
+            <li><a href="pages/login.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Líneas de Producto</h6>
+          <ul class="footer-links">
+            <li><a href="pages/catalogo.html">Galletas & Wafers</a></li>
+            <li><a href="pages/catalogo.html">Confitería & Caramelos</a></li>
+            <li><a href="pages/catalogo.html">Chocolatería Milka</a></li>
+            <li><a href="pages/catalogo.html">Gomas de Mascar Trident</a></li>
+            <li><a href="pages/catalogo.html">Pastillas Halls</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h6>Centro de Control</h6>
+          <p class="small text-light opacity-75 mb-3">
+            Acceso restringido para el personal administrativo y operativo de INVERCAJAS (Cargos, Empleados, Despachos e Inventarios).
+          </p>
+          
+          <div class="mt-3 small text-light opacity-50">
+            Proyecto Formativo ADSO / SENA - Gestión B2B SELLPAL
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p class="mb-0">
+          &copy; 2026 <strong>SELLPAL</strong> - INVERCAJAS S.A.S. Todos los derechos reservados. Desarrollado con HTML5, CSS3, Vanilla JS y Bootstrap 5.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/store.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Store.initFeaturedProducts('featuredProductsContainer');
+    });
+  </script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
